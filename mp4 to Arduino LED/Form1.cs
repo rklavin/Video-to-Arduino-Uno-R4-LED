@@ -84,6 +84,7 @@ namespace mp4_to_Arduino_LED
         private Mat convertMatToLED(Mat mat, int height, int width)
         {
             Mat output = new Mat(height, width, Emgu.CV.CvEnum.DepthType.Default, 3);
+            //CvInvoke.Decolor(mat, output, mat);
             CvInvoke.Resize(mat, output, new Size(12, 8), 1, 1, Inter.NearestExact);
             CvInvoke.Threshold(output, output, 127, 255, ThresholdType.Binary);
 

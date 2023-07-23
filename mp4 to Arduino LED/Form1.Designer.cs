@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             button1 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
@@ -199,6 +198,7 @@
             // 
             // trackBar1
             // 
+            trackBar1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             trackBar1.Location = new Point(358, 344);
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new Size(310, 45);
@@ -219,6 +219,7 @@
             // 
             // numericUpDown1
             // 
+            numericUpDown1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             numericUpDown1.Location = new Point(12, 328);
             numericUpDown1.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
@@ -228,6 +229,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Location = new Point(93, 330);
             label5.Name = "label5";
@@ -237,6 +239,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
             label6.Location = new Point(249, 330);
             label6.Name = "label6";
@@ -246,6 +249,7 @@
             // 
             // numericUpDown2
             // 
+            numericUpDown2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             numericUpDown2.Location = new Point(168, 328);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(75, 23);
