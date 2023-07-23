@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
@@ -35,17 +36,18 @@
             label4 = new Label();
             textBox2 = new TextBox();
             button3 = new Button();
-            pictureBox2 = new PictureBox();
             label3 = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             splitContainer1 = new SplitContainer();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            imageBox1 = new Emgu.CV.UI.ImageBox();
+            imageBox2 = new Emgu.CV.UI.ImageBox();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)imageBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imageBox2).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -114,16 +116,6 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Location = new Point(14, 18);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(300, 225);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -142,16 +134,6 @@
             label2.TabIndex = 6;
             label2.Text = "Input Preview";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(14, 18);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(300, 225);
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
-            // 
             // splitContainer1
             // 
             splitContainer1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -161,22 +143,56 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(pictureBox1);
+            splitContainer1.Panel1.Controls.Add(imageBox1);
             splitContainer1.Panel1.Controls.Add(label2);
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(imageBox2);
             splitContainer1.Panel2.Controls.Add(label3);
-            splitContainer1.Panel2.Controls.Add(pictureBox2);
             splitContainer1.Size = new Size(656, 248);
             splitContainer1.SplitterDistance = 328;
             splitContainer1.TabIndex = 12;
+            // 
+            // imageBox1
+            // 
+            imageBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            imageBox1.BorderStyle = BorderStyle.FixedSingle;
+            imageBox1.Location = new Point(14, 18);
+            imageBox1.Name = "imageBox1";
+            imageBox1.Size = new Size(300, 225);
+            imageBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            imageBox1.TabIndex = 2;
+            imageBox1.TabStop = false;
+            // 
+            // imageBox2
+            // 
+            imageBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            imageBox2.BorderStyle = BorderStyle.FixedSingle;
+            imageBox2.Location = new Point(14, 18);
+            imageBox2.Name = "imageBox2";
+            imageBox2.Size = new Size(300, 225);
+            imageBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            imageBox2.TabIndex = 2;
+            imageBox2.TabStop = false;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button4.Location = new Point(206, 340);
+            button4.Name = "button4";
+            button4.Size = new Size(120, 23);
+            button4.TabIndex = 13;
+            button4.Text = "Next Frame";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(680, 375);
+            Controls.Add(button4);
             Controls.Add(splitContainer1);
             Controls.Add(label4);
             Controls.Add(textBox2);
@@ -185,16 +201,17 @@
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(button1);
+            MinimumSize = new Size(696, 414);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
             splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)imageBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imageBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -208,10 +225,11 @@
         private Label label4;
         private TextBox textBox2;
         private Button button3;
-        private PictureBox pictureBox2;
         private Label label3;
         private Label label2;
-        private PictureBox pictureBox1;
         private SplitContainer splitContainer1;
+        private Button button4;
+        private Emgu.CV.UI.ImageBox imageBox1;
+        private Emgu.CV.UI.ImageBox imageBox2;
     }
 }
