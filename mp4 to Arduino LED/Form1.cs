@@ -22,7 +22,7 @@ namespace mp4_to_Arduino_LED
             OpenFileDialog openFileDialog = new OpenFileDialog()
             {
                 Title = "Select Source Video",
-                Filter = "Video Files (*.mp4)|*.mp4|All Files (*.*)|*.*"
+                Filter = "Video Files (*.mp4;*.webm;*.avi)|*.mp4;*.webm;*.avi|All Files (*.*)|*.*"
             };
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
