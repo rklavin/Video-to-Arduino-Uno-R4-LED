@@ -27,6 +27,11 @@ namespace mp4_to_Arduino_LED
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
+                if (videoCapture != null)
+                {
+                    videoCapture.Dispose();
+                }
+
                 textBox1.Text = openFileDialog.FileName;
                 videoCapture = new VideoCapture(openFileDialog.FileName);
                 button4_Click(sender, e);
@@ -203,7 +208,42 @@ namespace mp4_to_Arduino_LED
                 output.WriteLine("};");
 
                 output.Close();
+
+                MessageBox.Show("Conversion Complete!");
             }
+        }
+
+        private void Form1_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data == null) return;
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop)) return;
+
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            // Only check the first file, do not support dropping multiple files
+            e.Effect = DragDropEffects.Link;
+            Focus();
+            BringToFront();
+            return;
+        }
+
+        private void Form1_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data == null) return;
+            if (!e.Data.GetDataPresent(DataFormats.FileDrop)) return;
+
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+            // Only check the first file, do not support dropping multiple files
+            textBox1.Text = files[0];
+            if (videoCapture != null)
+            {
+                videoCapture.Dispose();
+            }
+            videoCapture = new VideoCapture(textBox1.Text);
+            button4_Click(sender, e);
+            updateSliderRange();
+            return;
         }
     }
 }

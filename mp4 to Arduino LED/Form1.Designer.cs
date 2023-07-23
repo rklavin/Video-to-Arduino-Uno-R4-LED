@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             button1 = new Button();
             textBox1 = new TextBox();
             label1 = new Label();
@@ -257,6 +258,7 @@
             // 
             // Form1
             // 
+            AllowDrop = true;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(680, 391);
@@ -278,6 +280,8 @@
             MinimumSize = new Size(696, 430);
             Name = "Form1";
             Text = "Form1";
+            DragDrop += Form1_DragDrop;
+            DragEnter += Form1_DragEnter;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
